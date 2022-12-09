@@ -1,0 +1,13 @@
+spring:
+    datasource:
+        url: jdbc:mysql://account_service:AVNS_jNNuA4x9VmNGqvV8rfS@db-mysql-ams3-95713-do-user-12672791-0.b.db.ondigitalocean.com:25060/defaultdb?ssl-mode=REQUIRED
+        username: account_service
+        password: AVNS_jNNuA4x9VmNGqvV8rfS
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        hibernate.ddl-auto: create
+        show-sql: true
+   
+    output.ansi.enabled: always
+
