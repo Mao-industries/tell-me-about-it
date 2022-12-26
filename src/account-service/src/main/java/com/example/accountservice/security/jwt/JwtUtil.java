@@ -5,7 +5,11 @@ package com.example.accountservice.security.jwt;
  */
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -23,12 +27,21 @@ public class JwtUtil {
 
     private Long expiration = 70000l;
 
-    public String generateToken(String username) {
+    public String generateToken(UserDetails userDetails) {
+        String authorities = userDetails.getAuthorities().stream()
+            .map(GrantedAuthority::getAuthority)
+            .collect(Collectors.joining(","));
+
+        // create a map of claims to be included in the JWT
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("sub", userDetails.getUsername());
+        claims.put("authorities", authorities);
         Date createdDate = new Date();
         Date expirationDate = new Date(createdDate.getTime() + expiration * 1000);
 
         return Jwts.builder()
-                .setSubject(username)
+                .setSubject(userDetails.getUsername())
+                .setClaims(claims)
                 .setIssuedAt(createdDate)
                 .setExpiration(expirationDate)
                 .signWith(SignatureAlgorithm.HS512, secret)
