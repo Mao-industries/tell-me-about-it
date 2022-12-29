@@ -1,8 +1,8 @@
-/home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/domain/models/dtos/UserAccountDTO.java
 /home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/security/AuthenticationResponse.java
+/home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/domain/models/dtos/UserAccountDTO.java
+/home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/security/SecurityConfig.java
 /home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/domain/exceptions/UsernameTakenException.java
 /home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/domain/models/entities/UserAccount.java
-/home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/security/SecurityConfig.java
 /home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/domain/exceptions/GeneralException.java
 /home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/security/jwt/JwtUtil.java
 /home/mBougueddach/project/src/account-service/src/main/java/com/example/accountservice/AccountServiceApplication.java
